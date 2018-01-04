@@ -8,17 +8,37 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Galgje" FontSize="48" HorizontalAlignment="Center" Margin="50"/>
+        <Image Source="Assets/blackboard-background.jpg"
+               Grid.Column="0"
+               Grid.Row="0"
+               Grid.ColumnSpan="6"
+               Grid.RowSpan="6"
+               Stretch="UniformToFill"/>
+        
+        <TextBlock Text="Galgje" 
+                   Foreground="White" FontFamily="Segoe Script" FontSize="48" 
+                   HorizontalAlignment="Center" 
+                   Margin="50"/>
+        
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
-            <TextBlock Text="Vul geheime woord in (langer dan 3 letters)" Margin="10"/>
-            <TextBox x:Name="geheimeWoord" Margin="10"/>
-            <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Stretch" Margin="10">
+            <TextBlock Text="Vul geheime woord in (langer dan 3 letters)" 
+                       Foreground="White" FontFamily="Segoe Script" 
+                       Margin="10"/>
+            
+            <TextBox x:Name="geheimeWoord" 
+                     FontFamily="Segoe Script" 
+                     Margin="10"/>
+            
+            <Button x:Name="btnPlay" 
+                    Content="Play" 
+                    HorizontalAlignment="Stretch" Margin="10">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="LightGray"/>
                         <GradientStop Color="DarkGray" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
+                
             </Button>
         </StackPanel>
     </Grid>

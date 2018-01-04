@@ -112,17 +112,20 @@
     <None Include="Galgje_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Galg\Galg0.png" />
-    <Content Include="Assets\Galg\Galg1.png" />
-    <Content Include="Assets\Galg\Galg10.png" />
-    <Content Include="Assets\Galg\Galg2.png" />
-    <Content Include="Assets\Galg\Galg3.png" />
-    <Content Include="Assets\Galg\Galg4.png" />
-    <Content Include="Assets\Galg\Galg5.png" />
-    <Content Include="Assets\Galg\Galg6.png" />
-    <Content Include="Assets\Galg\Galg7.png" />
-    <Content Include="Assets\Galg\Galg8.png" />
-    <Content Include="Assets\Galg\Galg9.png" />
+    <Content Include="Assets\blackboard-background.jpg" />
+    <Content Include="Assets\Galg\GalgT0.png" />
+    <Content Include="Assets\Galg\GalgT1.png" />
+    <Content Include="Assets\Galg\GalgT10.png" />
+    <Content Include="Assets\Galg\GalgT2.png" />
+    <Content Include="Assets\Galg\GalgT3.png" />
+    <Content Include="Assets\Galg\GalgT4.png" />
+    <Content Include="Assets\Galg\GalgT5.png" />
+    <Content Include="Assets\Galg\GalgT6.png" />
+    <Content Include="Assets\Galg\GalgT7.png" />
+    <Content Include="Assets\Galg\GalgT8.png" />
+    <Content Include="Assets\Galg\GalgT9.png" />
+    <Content Include="Assets\Galg\Stickman_thumbs_up.jpg" />
+    <Content Include="Assets\Galg\Stickman_thumbs_up_T.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

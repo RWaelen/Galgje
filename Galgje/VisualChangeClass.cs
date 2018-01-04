@@ -15,7 +15,7 @@ namespace Galgje
         public string GalgImageChange(int fouten)
         {
             string strFouten = fouten.ToString();
-            string ImgPath = "Assets/Galg/Galg" + strFouten + ".png";
+            string ImgPath = "Assets/Galg/GalgT" + strFouten + ".png";
             return ImgPath;            
         }
 

@@ -85,6 +85,7 @@ namespace Galgje
                 {
                     lblSelecteer.Visibility = Visibility.Collapsed;
                     Gewonnen.Visibility = Visibility.Visible;
+                    ImgStickman.Visibility = Visibility.Visible;
                 }
             }
             //onjuist
