@@ -25,12 +25,15 @@ namespace Galgje
 
     public sealed partial class MainPage : Page
     {
+        //objects aanmaken
         VisualChangeClass VisualChange = new VisualChangeClass();
         Controle controle = new Controle();
-
+ 
+        //variabelen aanmaken
         string input = "A";
         bool gewonnen = false;
         string geheim;
+        int toegestaneAantalFouten;
 
         List<string> geheimList = new List<string>();
         
@@ -39,17 +42,27 @@ namespace Galgje
         public MainPage()
         {
             this.InitializeComponent();
+            
             btnSelect.Click += BtnSelect_Click;
             btnLinks.Click += BtnLinks_Click;
             btnRechts.Click += BtnRechts_Click;
             btnNewGame.Click += BtnNewGame_Click;
+
         }
 
-        //event// - parameters van vorige pagina die meegegeven zijn naar string omzetten
+        //event// - parameters van vorige pagina die meegegeven zijn omzetten
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            
             base.OnNavigatedTo(e);
-            geheim = e.Parameter.ToString();
+
+            //lijst ontvangen en parameterMenuPage noemen
+            var parameterMenuPage = e.Parameter as List<string>;
+            geheim = parameterMenuPage[0];
+
+            //string naar int
+            Int32.TryParse(parameterMenuPage[1], out toegestaneAantalFouten);
+            lblMaxFouten.Text = toegestaneAantalFouten.ToString();
             setSecretWord();
         }
 
@@ -89,16 +102,19 @@ namespace Galgje
                 }
             }
             //onjuist
-            else if (fouten < 9)
+            else if (fouten < toegestaneAantalFouten -1)
             {
                 fouten++;
+                lblAantalFouten.Text = fouten.ToString() + "/";
                 Imaging();
                 TextblockEdit();
             }
             //onjuist game over
-            else if (fouten < 10)
+            else if (fouten < toegestaneAantalFouten)
             {
                 fouten++;
+                lblAantalFouten.Text = fouten.ToString()+"/";
+                fouten=10;
                 Imaging();
                 TextblockEdit();
                 lblSelecteer.Visibility = Visibility.Collapsed;
@@ -108,7 +124,7 @@ namespace Galgje
             }
         }
 
-        //Create bitmapimage from asset path
+        //Create bitmapimage from assets path
         void Imaging()
         {
             BitmapImage bitmapImage = new BitmapImage(new Uri(BaseUri, VisualChange.GalgImageChange(fouten)));
@@ -130,6 +146,7 @@ namespace Galgje
             {
                 Check();
             }
+            
         }
 
         //event// - zorgt ervoor dat de volgende letter in het alfabet geselecteerd wordt

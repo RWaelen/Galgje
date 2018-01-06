@@ -116,6 +116,29 @@
                    />
         </StackPanel>
 
+        <StackPanel Grid.Column="5"
+                    Grid.Row="2"
+                    VerticalAlignment="Center">
+            <TextBlock 
+                    Text="Fouten"
+                    FontFamily="Segoe Script"
+                    Foreground="White"
+                    FontSize="32"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="lblAantalFouten"
+                    Text="0/"
+                    FontFamily="Segoe Script"
+                    Foreground="White"
+                    FontSize="26"/>
+                <TextBlock x:Name="lblMaxFouten"
+                    Text="0"
+                    FontFamily="Segoe Script"
+                    Foreground="White"
+                    FontSize="26"/>
+            </StackPanel>
+            
+        </StackPanel>
+        
         <Button x:Name="btnLinks" Margin="0.5"
                 Content="Links"
                 Grid.Row="4"

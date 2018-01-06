@@ -8,27 +8,57 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".7*"/>
+            <ColumnDefinition Width=".3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".9*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Achtergond image die het hele scherm vult-->
         <Image Source="Assets/blackboard-background.jpg"
                Grid.Column="0"
                Grid.Row="0"
-               Grid.ColumnSpan="6"
-               Grid.RowSpan="6"
+               Grid.ColumnSpan="4"
+               Grid.RowSpan="4"
                Stretch="UniformToFill"/>
-        
+
         <TextBlock Text="Galgje" 
                    Foreground="White" FontFamily="Segoe Script" FontSize="48" 
                    HorizontalAlignment="Center" 
-                   Margin="50"/>
-        
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
-            <TextBlock Text="Vul geheime woord in (langer dan 3 letters)" 
+                   VerticalAlignment="Top"
+                   Margin="20"
+                   Grid.Column="1"
+                   Grid.Row="1"/>
+
+        <!--Settings button image-->
+        <Image Source="Assets\SettingsBtn.png"
+               Grid.Column="3"
+               Grid.Row="1"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Top"
+               Tapped="SettingsImage_Tapped"
+               />
+
+        <!--Stackpanel met benodigdheden om te spelen-->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2">
+            <TextBlock Text="Vul geheime woord in" 
+                       Foreground="White" FontFamily="Segoe Script" 
+                       HorizontalAlignment="Center"/>
+            <TextBlock Text="(langer dan 2 letters en korter dan 13 letters)" 
                        Foreground="White" FontFamily="Segoe Script" 
                        Margin="10"/>
-            
+
             <TextBox x:Name="geheimeWoord" 
                      FontFamily="Segoe Script" 
                      Margin="10"/>
-            
+
             <Button x:Name="btnPlay" 
                     Content="Play" 
                     HorizontalAlignment="Stretch" Margin="10">
@@ -38,8 +68,52 @@
                         <GradientStop Color="DarkGray" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
-                
+
             </Button>
+        </StackPanel>
+
+        <!--Settingspaneel background-->
+        <Rectangle x:Name="PanelBg"
+                   Fill="Gray"
+                   Opacity=".5"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="4" 
+                   Stroke="Black" StrokeThickness="2"
+                   Visibility="Collapsed"/>
+        
+        <!--Settingspanel close button-->
+        <TextBlock x:Name="closeSettingsPanel" Tapped="closeSettingsPanel_Tapped"
+                   Text="X"
+                   FontSize="32"
+                   Grid.Row="3"
+                   Grid.Column="4" 
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Right"
+                   Margin="0,0,10,0"
+                   Visibility="Collapsed"/>
+
+        <!--Settings content-->
+        <StackPanel x:Name="SettingsPanel" 
+                    Grid.Column="1" Grid.Row="3" 
+                    Visibility="Collapsed">
+
+            <TextBlock Text="Settings"
+                       Foreground="White" FontFamily="Segoe Script" FontSize="32" 
+                       HorizontalAlignment="Center" />
+            <TextBlock Text="Aantal fouten die gemaakt mogen worden"
+                       Foreground="White" FontFamily="Segoe Script" FontSize="24" 
+                       HorizontalAlignment="Center" Margin="0,20,0,0"/>
+
+            <CheckBox x:Name="cb6Fouten" Content="6 fouten" 
+                      HorizontalAlignment="Center" 
+                      Checked="cb6Fouten_Checked"/>
+            <CheckBox x:Name="cb8Fouten" Content="8 fouten" 
+                      HorizontalAlignment="Center" 
+                      Checked="cb8Fouten_Checked"/>
+            <CheckBox x:Name="cb10Fouten" Content="10 fouten" IsChecked="True"
+                      HorizontalAlignment="Center"  
+                      Checked="cb10Fouten_Checked"/>
+
         </StackPanel>
     </Grid>
 </Page>

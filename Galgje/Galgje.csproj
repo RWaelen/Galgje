@@ -109,6 +109,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Galgje_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +127,7 @@
     <Content Include="Assets\Galg\GalgT9.png" />
     <Content Include="Assets\Galg\Stickman_thumbs_up.jpg" />
     <Content Include="Assets\Galg\Stickman_thumbs_up_T.png" />
+    <Content Include="Assets\SettingsBtn.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
