@@ -24,7 +24,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        
+        <!--Achtergrond image-->
         <Image Source="Assets/blackboard-background.jpg"
                Grid.Column="0"
                Grid.Row="0"
@@ -41,12 +42,14 @@
                    Grid.ColumnSpan="2"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"/>
-
+        
+        <!--image element waar de galg zich opbouwt-->
         <Image x:Name="ImgGalg"
             Source="Assets/Galg/GalgT0.png"
             Grid.Column="1"
             Grid.Row="1"/>
-
+        
+        <!--Geheime woord dat onthult word wanneer de speler verloren heeft-->
         <TextBlock x:Name="lblWord"
                    Text=""
                    FontFamily="Segoe Script"
@@ -59,6 +62,7 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"/>
         
+        <!--streepjes die het geheime woord zullen vormen als de speler goed raad-->
         <TextBlock x:Name="lblSecretWord"
                    Text=""
                    FontFamily="Segoe Script"
@@ -81,6 +85,44 @@
                  HorizontalAlignment="Center"
                  VerticalAlignment="Bottom"/>
 
+        <StackPanel Orientation="Horizontal"
+                   Grid.Column="2"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center">
+
+            <TextBlock x:Name="lblSelectionLeft"
+                   Foreground="DarkGray"
+                   FontFamily="Segoe Script"
+                   Text="-"
+                   Opacity="0"
+                   FontSize="14"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                       Margin="0,0,10,0"/>
+            
+            <!--De text van dit element word gebruikt wanneer geselecteerd word-->
+            <TextBlock x:Name="lblSelection"
+                   Foreground="White"
+                   FontFamily="Segoe Script"
+                   Text="A"
+                   FontSize="32"
+                   Grid.Column="2"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="2"
+                   Margin="0,0,10,0"    
+                   />
+            
+            <TextBlock x:Name="lblSelectionRight"
+                   Foreground="DarkGray"
+                   FontFamily="Segoe Script"
+                   Text="B"
+                   FontSize="14"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+        </StackPanel>
+        <!--De text van dit element word gebruikt wanneer geselecteerd word
         <TextBlock x:Name="lblSelection"
                    Foreground="White"
                    FontFamily="Segoe Script"
@@ -90,7 +132,7 @@
                    Grid.Row="3"
                    Grid.ColumnSpan="2"
                    VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
+                   HorizontalAlignment="Center"/>-->
         
         <!--Onjuiste letters-->
         <StackPanel Grid.Column="5"
@@ -102,12 +144,14 @@
                     Foreground="White"
                     FontSize="32" 
                     />
+            <!--Eerste 5 fouten letters komen hierin-->
             <TextBlock x:Name="Onjuiste0"
                     Text=""
                     FontFamily="Segoe Script"
                     Foreground="White"
                     FontSize="26" 
                     />
+            <!--fouten letters na 5 fouten komen hierin-->
             <TextBlock x:Name="Onjuiste1"
                    Text=""
                    FontFamily="Segoe Script"
@@ -115,7 +159,8 @@
                    FontSize="26" 
                    />
         </StackPanel>
-
+        
+        <!--Aantalfouten / maxAantalfouten-->
         <StackPanel Grid.Column="5"
                     Grid.Row="2"
                     VerticalAlignment="Center">
@@ -139,6 +184,7 @@
             
         </StackPanel>
         
+        <!--Vorige in alfabet-->
         <Button x:Name="btnLinks" Margin="0.5"
                 Content="Links"
                 Grid.Row="4"
@@ -153,6 +199,7 @@
             </Button.Background>
         </Button>
 
+        <!--volgende in alfabet-->
         <Button x:Name="btnRechts"  Margin="0.5"
                 Content="Rechts"
                 Grid.Row="4"
@@ -166,7 +213,8 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-
+        
+        <!--Letter selecteren-->
         <Button x:Name="btnSelect" 
                 Content="Selecteer"
                 Grid.Row="4"
@@ -184,7 +232,9 @@
         
         <!--Bij verlies game over visible-->
         <TextBlock x:Name="GameOver" 
-                   Text="Game Over!"
+                   Text="GAME OVER!"
+                   FontFamily="Segoe Script"
+                   Foreground="Red"
                    FontWeight="Bold"
                    FontSize="100"
                    Visibility="Collapsed"
@@ -193,20 +243,24 @@
                    Grid.Column="1"
                    Grid.Row="2"
                    Grid.ColumnSpan="4"
-                   Grid.RowSpan="2"/>
+                   Grid.RowSpan="2"
+                   Margin="0,30,0,0"/>
 
         <!--Bij winst gewonnen visible-->
         <TextBlock x:Name="Gewonnen" 
-                   Text="Gewonnen!"
+                   Text="GEWONNEN!"
                    FontWeight="Bold"
+                   FontFamily="Segoe Script"
                    FontSize="100"
+                   Foreground="Orange"
                    Visibility="Collapsed"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Top"
                    Grid.Column="1"
                    Grid.Row="2"
                    Grid.ColumnSpan="4"
-                   Grid.RowSpan="2"/>
+                   Grid.RowSpan="2"
+                   Margin="0,30,0,0"/>
         
         <Image x:Name="ImgStickman"
             Source="Assets/Galg/Stickman_thumbs_up_T.png"
@@ -216,6 +270,7 @@
             Grid.Column="0"
             Grid.Row="1"/>
         
+        <!--button om nieuw spel te starten-->
         <Button x:Name="btnNewGame" Margin="10"
                 Content="Nieuw Spel"
                 Grid.Column="5"

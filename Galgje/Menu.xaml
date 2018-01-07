@@ -46,7 +46,7 @@
                Tapped="SettingsImage_Tapped"
                />
 
-        <!--Stackpanel met benodigdheden om te spelen-->
+        <!--Stackpanel met parameters om te spelen-->
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2">
             <TextBlock Text="Vul geheime woord in" 
                        Foreground="White" FontFamily="Segoe Script" 
@@ -103,7 +103,7 @@
             <TextBlock Text="Aantal fouten die gemaakt mogen worden"
                        Foreground="White" FontFamily="Segoe Script" FontSize="24" 
                        HorizontalAlignment="Center" Margin="0,20,0,0"/>
-
+            
             <CheckBox x:Name="cb6Fouten" Content="6 fouten" 
                       HorizontalAlignment="Center" 
                       Checked="cb6Fouten_Checked"/>

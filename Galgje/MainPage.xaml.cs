@@ -166,6 +166,22 @@ namespace Galgje
             string text = controle.IntToCharToString(selectInt);
             input = text;
             lblSelection.Text = text;
+
+            if (selectInt > 65)
+            {
+                lblSelectionLeft.Text = controle.IntToCharToString(selectInt - 1);
+                lblSelectionLeft.Opacity = 1;
+                if (selectInt < 90)
+                {
+                    lblSelectionRight.Text = controle.IntToCharToString(selectInt + 1);
+                }
+                else
+                {
+                    lblSelectionRight.Opacity = 0;
+                }
+                    
+            }
+           
         }
 
         //event// - zorgt ervoor dat de vorige letter in het alfabet geselecteerd wordt
@@ -185,6 +201,23 @@ namespace Galgje
             string text = controle.IntToCharToString(selectInt);
             input = text;
             lblSelection.Text = text;
+
+            if (selectInt < 90)
+            {
+                lblSelectionRight.Text = controle.IntToCharToString(selectInt + 1);
+                lblSelectionRight.Opacity = 1;
+                
+                
+                if (selectInt > 65)
+                {
+                    lblSelectionLeft.Text = controle.IntToCharToString(selectInt - 1);
+                }
+                else
+                {
+                    lblSelectionLeft.Opacity = 0;
+                }
+
+            }
         }
 
         //event// - New Game ga naar menu page
